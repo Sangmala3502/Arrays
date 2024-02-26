@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main {
+    public static int facingSun(int n, int arr[]) {
+
+        // count will store how many building will see the sunrise 
+		int count = 1;
+		int largestBuilding = arr[0];
+		
+		for(int i=0; i<n; i=i+1)
+		{
+		    if(arr[i] > largestBuilding)
+		    {
+		        count = count + 1; 
+
+				// Since the current building > largest building 
+				// We will update the largest building 
+		        largestBuilding = arr[i];
+		    }
+		}
+		
+		return count; 
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        int array[] = new int[n];
+
+        for(int i=0; i<n; i++){
+            array[i]= sc.nextInt();
+        }
+        System.out.println(facingSun(n,array));
+    }
+}
+
