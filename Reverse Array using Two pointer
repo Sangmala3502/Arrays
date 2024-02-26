@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+
+
+public class Main {
+
+    public static void reverseArray(int arr[], int start, int end)
+    {
+		// Why can we not print the array in reverse order ?
+		// Because main function handles the printing part 
+		// In companies test you cannot change the main function 
+		// so we can't go with the printing logic 
+		
+		// Whenever array is passed to any function and if we change it 
+		// then the change is permanent 
+		
+		// REVERSE THE ARRAY using TWO POINTER 
+		
+		int i = start;
+		int j = end;
+		
+		// In two pointer technique EVERY TIME we use WHILE LOOP 
+		// As soon as i becomes equal to j or i cross j then we will STOP 
+		while(i<j)
+		{
+		    // How to interchange values based on 3rd variable 
+		    // INTERCHANGE -> arr[i] with arr[j]
+		    int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp; 
+		    
+		    // i is moving in forward direction 
+		    i = i + 1;
+		    
+		    // j is moving in backward direction 
+		    j = j - 1;
+		}
+		
+    } 
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        n = sc.nextInt();
+        int arr1[] = new int[n];
+        for(int i=0;i<n;i++)
+            arr1[i] = sc.nextInt();
+        
+        reverseArray(arr1, 0, n-1);
+        
+        for (int i = 0; i < n; i++)
+             System.out.print(arr1[i] + " ");       
+        System.out.println('\n');
+    }
+}
+
