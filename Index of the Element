@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Main {
+    public static void IndexOfElement(int N, int X, int[] arr){
+        
+        // count is representing HOW many times X is present in the array ?
+        int count = 0;
+        
+        // original index of the array -> 0 to N-1
+        // That's why in the for loop we will use 0 - N-1
+        for(int i=0; i<N; i=i+1)
+        {
+            if(arr[i] == X)
+            {
+                count = count + 1;
+                // You have to give output in 1-based indexing.
+                // Since this is there so we need to print i+1 
+                System.out.print(i+1 + " ");
+            }
+        }
+        
+        // Let's suppose X is not present in the array at all 
+        if(count == 0)
+        {
+            System.out.print("-1");
+        }
+    }
+    public static void main(String[] args) throws Throwable {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int X = sc.nextInt();
+
+        int arr[]=new int[N];
+        for(int i = 0; i < N; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        IndexOfElement(N,X,arr);
+    }
+}
+
